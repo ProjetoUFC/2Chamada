@@ -32,6 +32,6 @@ public class UserService {
     
     @SuppressWarnings("unchecked")
 	public List<User> findAll() {
-        return em.createQuery("select u from Usuario u").getResultList();
+        return em.createQuery("select u from User u").getResultList();
     }
 }
