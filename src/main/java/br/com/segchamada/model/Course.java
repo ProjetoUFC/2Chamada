@@ -21,7 +21,14 @@ public class Course extends DefaultEntity implements Serializable {
 	private String name;
 	
 	//@Column(nullable = false)
-	private int identification;
+	private String identification;
+	
+	public Course (){}
+	
+	public Course (String name, String identification) {
+		this.name = name;
+		this.identification = identification;
+	}
 	
 	@ManyToMany
 	private List<Teacher> teachers = new ArrayList<Teacher>();
@@ -40,11 +47,11 @@ public class Course extends DefaultEntity implements Serializable {
 		this.name = name;
 	}
 	
-	public int getIdentification() {
+	public String getIdentification() {
 		return identification;
 	}
 	
-	public void setIdentification(int identification) {
+	public void setIdentification(String identification) {
 		this.identification = identification;
 	}
 

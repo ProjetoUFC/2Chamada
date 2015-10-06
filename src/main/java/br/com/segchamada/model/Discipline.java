@@ -16,6 +16,13 @@ public class Discipline extends DefaultEntity implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
+	
+	public Discipline (){}
+	
+	public Discipline (String name, String identification) {
+		this.name = name;
+		this.identification = identification;
+	}
 
 //	@Column(nullable = false)
 	private String name;
