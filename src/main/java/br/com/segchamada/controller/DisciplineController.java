@@ -5,7 +5,7 @@ import java.io.Serializable;
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
-import br.com.caelum.vraptor.Post;
+import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Result;
 import br.com.segchamada.model.Discipline;
 import br.com.segchamada.service.DisciplineService;
@@ -22,11 +22,11 @@ public class DisciplineController implements Serializable {
 	@Inject Result result;
 	
 	
-	@Post //@Get
-	public void add(Discipline disciplina) {
-		//Discipline disciplina = new Discipline("Introdução a Loucura", "CTR2469");
+	@Get ("/discipline")
+	public void add() {
+		Discipline disciplina = new Discipline("Introdução a Loucura", "CTR2469", null, null, null, null);
 		service.persist(disciplina);
-		//result.include("linkTo[UserController].add");
+		result.nothing();
 	}
 
 }

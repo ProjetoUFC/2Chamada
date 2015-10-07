@@ -17,13 +17,6 @@ public class Discipline extends DefaultEntity implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	public Discipline (){}
-	
-	public Discipline (String name, String identification) {
-		this.name = name;
-		this.identification = identification;
-	}
-
 //	@Column(nullable = false)
 	private String name;
 	
@@ -43,7 +36,18 @@ public class Discipline extends DefaultEntity implements Serializable {
 	@OneToMany (cascade = CascadeType.REMOVE)
 	private List<Proof> proof = new ArrayList<Proof>();
 	
+	public Discipline(){}
 	
+	public Discipline(String name, String identification, List<Teacher> teachers, List<Student> students,
+			List<Course> courses, List<Proof> proof) {
+		this.name = name;
+		this.identification = identification;
+		this.teachers = teachers;
+		this.students = students;
+		this.courses = courses;
+		this.proof = proof;
+	}
+
 	public String getName() {
 		return name;
 	}

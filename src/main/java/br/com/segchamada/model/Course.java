@@ -23,13 +23,17 @@ public class Course extends DefaultEntity implements Serializable {
 	//@Column(nullable = false)
 	private String identification;
 	
-	public Course (){}
+	public Course(){}
 	
-	public Course (String name, String identification) {
+	public Course(String name, String identification, List<Teacher> teachers, Teacher coordinator,
+			List<Discipline> disciplines) {
 		this.name = name;
 		this.identification = identification;
+		this.teachers = teachers;
+		this.coordinator = coordinator;
+		this.disciplines = disciplines;
 	}
-	
+
 	@ManyToMany
 	private List<Teacher> teachers = new ArrayList<Teacher>();
 	

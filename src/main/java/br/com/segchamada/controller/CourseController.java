@@ -5,7 +5,7 @@ import java.io.Serializable;
 import javax.inject.Inject;
 
 import br.com.caelum.vraptor.Controller;
-import br.com.caelum.vraptor.Post;
+import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Result;
 import br.com.segchamada.model.Course;
 import br.com.segchamada.service.CourseService;
@@ -21,10 +21,10 @@ public class CourseController implements Serializable{
 	@Inject CourseService service;
 	@Inject Result result;
 	
-	@Post //@Get
-	public void add(Course curso) {
-		//Course curso = new Course("Ciência da Computação", "1232469");
-		service.persist(curso);
-		//result.include("linkTo[UserController].add");
+	@Get ("/course")
+	public void add() {
+		Course course = new Course("Ciência da Computação", "1232469", null, null, null);
+		service.persist(course);
+		result.nothing();
 	}
 }
