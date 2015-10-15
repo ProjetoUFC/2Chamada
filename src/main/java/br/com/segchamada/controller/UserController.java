@@ -21,6 +21,7 @@ public class UserController implements Serializable {
 	
 	@Inject UserService service;
 	@Inject Result result;
+<<<<<<< HEAD
 /*	
 	@Get ("/events")
 	public void show() {
@@ -35,6 +36,15 @@ public class UserController implements Serializable {
 //		student.setDisciplines(null);
 		service.persist(student);
 		result.nothing();//redirectTo(this).show();
+=======
+	
+//	@Post
+	@Get ("/test")
+	public void add() {//(Student usuario) {
+		Student usuario = new Student("Jão", "jao", "jao123", "jao@jao.gmail.com", 320232, null, null);
+		service.persist(usuario);
+		result.nothing();
+>>>>>>> 5cf82f6c4e4689e345c3f3448c0d6726f1f9797d
 	}
 	
 }
