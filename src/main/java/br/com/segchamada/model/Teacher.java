@@ -17,7 +17,7 @@ public class Teacher extends User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private String identification;
 	
 	@ManyToMany

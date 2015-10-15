@@ -16,7 +16,7 @@ public class Student extends User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private Integer matriculation;
 	
 	@ManyToMany

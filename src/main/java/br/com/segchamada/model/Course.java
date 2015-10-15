@@ -17,10 +17,10 @@ public class Course extends DefaultEntity implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
-	//@Column(nullable = false)
+	@Column(nullable = false)
 	private String name;
 	
-	//@Column(nullable = false)
+	@Column(nullable = false)
 	private int identification;
 	
 	@ManyToMany

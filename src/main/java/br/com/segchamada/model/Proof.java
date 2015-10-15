@@ -16,13 +16,13 @@ public class Proof extends DefaultEntity implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private LocalDateTime date;
 	
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private LocalDateTime date2Chamada;
 	
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private boolean solicitation;
 	
 	@ManyToOne

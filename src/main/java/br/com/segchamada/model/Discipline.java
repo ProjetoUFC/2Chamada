@@ -17,10 +17,10 @@ public class Discipline extends DefaultEntity implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private String name;
 	
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private String identification;
 
 	

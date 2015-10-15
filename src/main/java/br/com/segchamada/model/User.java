@@ -14,16 +14,16 @@ public class User extends DefaultEntity implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private String name;
 	
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private String login;
 	
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private String password;
 	
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private String email;
 	
 	public User(){}
