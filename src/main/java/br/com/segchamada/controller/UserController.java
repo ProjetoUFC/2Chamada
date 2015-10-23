@@ -28,13 +28,15 @@ public class UserController implements Serializable {
 	}
 */
 
-//	@Post
 	@Get ("/adduser")
-	public void add(Student student) {//(Student student) {
-//		Student student = new Student("Jão", "jao", "jao123", "jao@jao.com", 320232, null, null);
-//		student.setCourse(null);
-//		student.setDisciplines(null);
+	public void add () {//(Student student) {
+		User student = new Student("Jão", "jao", "jao123", "jao@jao.com", 320232, null, null);
 		service.persist(student);
-		result.nothing();//redirectTo(this).show();
+		result.nothing();
+	}
+	
+	@Get ("/deleteuser")
+	public void delete () {
+		service.remove((Student) service.findWithId(3));
 	}
 }

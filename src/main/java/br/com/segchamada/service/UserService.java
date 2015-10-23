@@ -6,7 +6,7 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-import br.com.segchamada.model.User;
+import br.com.segchamada.model.*;
 
 @Stateless
 public class UserService {
@@ -27,7 +27,7 @@ public class UserService {
     }
     
     public User findWithId(long id) {
-        return em.find(User.class, id);
+        return em.find(Student.class, id);
     }
     
     @SuppressWarnings("unchecked")
@@ -37,4 +37,15 @@ public class UserService {
 //    	search.addAll(em.createQuery("select a from Administrator a").getResultList());
         return search;
     }
+/*    
+    public User findWithName(String name) {
+    	List<User> students = this.findAll();
+    	for(User u : students) {
+    		if(u.getName().equals(name)) {
+    			return u;
+    		}
+    	}
+    	return null;
+    }
+*/
 }
