@@ -30,22 +30,11 @@ public class UserService {
         return em.find(Student.class, id);
     }
     
-    @SuppressWarnings("unchecked")
-	public List<User> findAll() {
-    	List<User> search = em.createQuery("select s from Student s").getResultList();
+    public List<Student> findAll() {
+    	List<Student> search = em.createQuery("select s from Student s order by s.name", Student.class).getResultList();
 //    	search.addAll(em.createQuery("select t from Teacher t").getResultList());
 //    	search.addAll(em.createQuery("select a from Administrator a").getResultList());
         return search;
     }
-/*    
-    public User findWithName(String name) {
-    	List<User> students = this.findAll();
-    	for(User u : students) {
-    		if(u.getName().equals(name)) {
-    			return u;
-    		}
-    	}
-    	return null;
-    }
-*/
+
 }
