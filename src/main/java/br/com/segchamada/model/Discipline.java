@@ -1,8 +1,9 @@
 package br.com.segchamada.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.lang.Long;
+//import java.util.ArrayList;
+//import java.util.List;
 
 import javax.persistence.*;
 
@@ -12,10 +13,15 @@ import javax.persistence.*;
  */
 @Entity
 
-public class Discipline extends DefaultEntity implements Serializable {
+public class Discipline implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, updatable = false)
+    private Long id;
 
 	@Column(nullable = false)
 	private String name;
@@ -23,7 +29,7 @@ public class Discipline extends DefaultEntity implements Serializable {
 	@Column(nullable = false)
 	private String identification;
 
-	
+/*	
 	@ManyToMany
 	private List<Teacher> teachers = new ArrayList<Teacher>();
 	
@@ -35,7 +41,18 @@ public class Discipline extends DefaultEntity implements Serializable {
 	
 	@OneToMany (cascade = CascadeType.REMOVE)
 	private List<Proof> proof = new ArrayList<Proof>();
+*/	
 	
+	protected Discipline() {}
+	
+	public Discipline(String name, String identification) {
+		this.name = name;
+		this.identification = identification;
+	}
+	
+	public Long getId() {
+		return this.id;
+	}
 	
 	public String getName() {
 		return name;
@@ -52,7 +69,7 @@ public class Discipline extends DefaultEntity implements Serializable {
 	public void setIdentification(String identification) {
 		this.identification = identification;
 	}
-
+/*
 	public List<Teacher> getTeachers() {
 		return teachers;
 	}
@@ -84,5 +101,5 @@ public class Discipline extends DefaultEntity implements Serializable {
 	public void setProofs(List<Proof> proofs) {
 		this.proof = proofs;
 	}
-   
+   */
 }
