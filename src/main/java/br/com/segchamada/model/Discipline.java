@@ -2,8 +2,7 @@ package br.com.segchamada.model;
 
 import java.io.Serializable;
 import java.lang.Long;
-//import java.util.ArrayList;
-//import java.util.List;
+import java.util.List;
 
 import javax.persistence.*;
 
@@ -29,19 +28,18 @@ public class Discipline implements Serializable {
 	@Column(nullable = false)
 	private String identification;
 
-/*	
 	@ManyToMany
-	private List<Teacher> teachers = new ArrayList<Teacher>();
+	private List<Teacher> teachers;
 	
 	@ManyToMany
-	private List<Student> students = new ArrayList<Student>();
+	private List<Student> students;
 	
 	@ManyToMany
-	private List<Course> courses = new ArrayList<Course>();
+	private List<Course> courses;
 	
 	@OneToMany (cascade = CascadeType.REMOVE)
-	private List<Proof> proof = new ArrayList<Proof>();
-*/	
+	private List<Test> tests;
+
 	
 	protected Discipline() {}
 	
@@ -69,7 +67,7 @@ public class Discipline implements Serializable {
 	public void setIdentification(String identification) {
 		this.identification = identification;
 	}
-/*
+
 	public List<Teacher> getTeachers() {
 		return teachers;
 	}
@@ -94,12 +92,11 @@ public class Discipline implements Serializable {
 		this.courses = courses;
 	}
 
-	public List<Proof> getProofs() {
-		return proof;
+	public List<Test> getTests() {
+		return tests;
 	}
 
-	public void setProofs(List<Proof> proofs) {
-		this.proof = proofs;
+	public void setTests(List<Test> proofs) {
+		this.tests = proofs;
 	}
-   */
 }

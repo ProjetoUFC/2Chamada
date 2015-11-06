@@ -1,7 +1,6 @@
 package br.com.segchamada.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -12,10 +11,15 @@ import javax.persistence.*;
  */
 @Entity
 
-public class Course extends DefaultEntity implements Serializable {
+public class Course implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, updatable = false)
+    private Long id;
 
 	@Column(nullable = false)
 	private String name;
@@ -24,13 +28,20 @@ public class Course extends DefaultEntity implements Serializable {
 	private int identification;
 	
 	@ManyToMany
-	private List<Teacher> teachers = new ArrayList<Teacher>();
+	private List<Teacher> teachers;
 	
 	@OneToOne
 	private Teacher coordinator;
 	
 	@ManyToMany
-	private List<Discipline> disciplines = new ArrayList<Discipline>();
+	private List<Discipline> disciplines;
+	
+	@OneToMany
+	private List<Student> students;
+	
+	public Long getId() {
+		return id;
+	}
 	
 	public String getName() {
 		return name;
@@ -70,6 +81,14 @@ public class Course extends DefaultEntity implements Serializable {
 
 	public void setDisciplines(List<Discipline> disciplines) {
 		this.disciplines = disciplines;
+	}
+
+	public List<Student> getStudents() {
+		return students;
+	}
+
+	public void setStudents(List<Student> students) {
+		this.students = students;
 	}
 
 }

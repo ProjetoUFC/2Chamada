@@ -25,15 +25,6 @@ public class Student extends User implements Serializable {
 	@ManyToOne
 	private Course course;
 
-	public Student() {}
-
-	public Student(String name, String login, String password, String email, Integer matriculation, List<Discipline> disciplines, Course course) {
-		super(name, login, password, email);
-		this.matriculation = matriculation;
-		this.disciplines = disciplines;
-		this.course = course;
-	}
-
 	public Integer getMatriculation() {
 		return matriculation;
 	}
