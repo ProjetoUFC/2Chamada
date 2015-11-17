@@ -11,23 +11,29 @@ import javax.persistence.*;
  */
 @Entity
 
-public class Proof extends DefaultEntity implements Serializable {
+public class Test implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, updatable = false)
+    private Long id;
 
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private LocalDateTime date;
 	
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private LocalDateTime date2Chamada;
 	
-//	@Column(nullable = false)
-	private boolean solicitation;
-	
 	@ManyToOne
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private Discipline discipline;
+	
+	public Long getId() {
+		return id;
+	}
 
 	public LocalDateTime getDate() {
 		return date;
@@ -43,14 +49,6 @@ public class Proof extends DefaultEntity implements Serializable {
 
 	public void setData2Chamada(LocalDateTime date2Chamada) {
 		this.date2Chamada = date2Chamada;
-	}
-
-	public boolean isSolicitation() {
-		return solicitation;
-	}
-
-	public void setSolicitation(boolean solicitation) {
-		this.solicitation = solicitation;
 	}
 
 	public Discipline getDisciplina() {

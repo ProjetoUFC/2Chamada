@@ -9,30 +9,30 @@ import javax.persistence.*;
  */
 @MappedSuperclass
 
-public class User extends DefaultEntity implements Serializable {
+public class User implements Serializable {
 
 	
 	private static final long serialVersionUID = 1L;
+	
+	@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(nullable = false, updatable = false)
+    private Long id;
 
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private String name;
 	
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private String login;
 	
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private String password;
 	
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private String email;
 	
-	public User(){}
-	
-	public User(String name, String login, String password, String email) {
-		this.name = name;
-		this.login = login;
-		this.password = password;
-		this.email = email;
+	public Long getId() {
+		return id;
 	}
 
 	public String getName() {

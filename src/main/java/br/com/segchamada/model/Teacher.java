@@ -1,7 +1,6 @@
 package br.com.segchamada.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
@@ -17,7 +16,7 @@ public class Teacher extends User implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private String identification;
 	
 	@ManyToMany
@@ -27,7 +26,7 @@ public class Teacher extends User implements Serializable {
 	private Course coordinatorCourse;
 	
 	@ManyToMany
-	private List<Course> courses = new ArrayList<Course>();
+	private List<Course> courses;
 	
 
 	public String getIdentification() {
